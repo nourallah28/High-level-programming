@@ -57,6 +57,7 @@ constexpr char let = '#';
 constexpr char result = '=';
 const char square_root= '?';
 const string declkey = "let"; //constexpr string since C++20 only
+const string quitkey= "quit";
 
 //function declarations
 double expression();
@@ -186,6 +187,7 @@ Token Token_stream::get()
     			while (cin.get(ch) && (isalpha(ch) || isdigit(ch))) s += ch;
     			cin.putback(ch);
     			if (s == declkey) return Token{let};
+			else if (s == quitkey) return Token{quit};
     			else if (is_declared(s))
     				return Token(number, get_value(s));
     			return Token{name,s};
