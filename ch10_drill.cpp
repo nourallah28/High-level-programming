@@ -78,6 +78,6 @@ int main()
 	cout << "\n";
 	
 	if(original_points.size() != processed_points.size())
-		cout << "There is something wrong in the size\n";
+		cout << "Something's wrong!\n";
 	
 }
